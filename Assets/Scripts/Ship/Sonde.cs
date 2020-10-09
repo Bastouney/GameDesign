@@ -7,7 +7,7 @@ public class Sonde : MonoBehaviour
 {
     public Vector2 endPos = new Vector2(-1, -1);
     [SerializeReference] private float moveSpeed = 0.5f;
-    public float cost = 0.1f;
+    public float economyCost = 0.1f;
     public float scienceGains = 0.1f;
 
     public EconomyProgressBar economy;
@@ -60,8 +60,11 @@ public class Sonde : MonoBehaviour
         }
     }
 
-    public void decreaseMoney()
+    public bool decreaseMoney()
     {
-        economy.decreaseProgress(cost);
+        if (economy.slider.value < economyCost)
+            return false;
+        economy.decreaseProgress(economyCost);
+        return true;
     }
 }

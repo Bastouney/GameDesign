@@ -6,6 +6,12 @@ public class Colonie : MonoBehaviour
 {
     public Vector2 endPos = new Vector2(-1, -1);
     [SerializeReference] private float moveSpeed = 0.5f;
+    public float economyCost = 0.1f;
+
+    public EconomyProgressBar economy;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,5 +53,13 @@ public class Colonie : MonoBehaviour
                 //GameObject.Destroy(this.gameObject);
             }
         }
+    }
+
+    public bool decreaseMoney()
+    {
+        if (economy.slider.value < economyCost)
+            return false;
+        economy.decreaseProgress(economyCost);
+        return true;
     }
 }

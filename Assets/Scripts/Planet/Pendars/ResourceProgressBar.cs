@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ResourceProgressBar : MonoBehaviour
 {
-    private Slider slider;
+    public Slider slider;
 
     public float FillSpeed = 0.5f;
     private float targetProgress = 1;

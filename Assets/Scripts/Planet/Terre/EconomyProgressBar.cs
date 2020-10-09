@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class EconomyProgressBar : MonoBehaviour
 {
-    private Slider slider;
+    public Slider slider;
 
-    public float FillSpeed = 0.5f;
-    private float targetProgress = 0.6f;
+    public float FillSpeed = 0.005f;
+    private float targetProgress = 0.5f;
 
     private void Awake()
     {
@@ -25,9 +25,9 @@ public class EconomyProgressBar : MonoBehaviour
     void Update()
     {
         if (slider.value < targetProgress)
-            slider.value += FillSpeed * Time.deltaTime;
+            slider.value += FillSpeed;
         if (slider.value > targetProgress)
-            slider.value -= FillSpeed * Time.deltaTime;
+            slider.value -= FillSpeed;
     }
 
     public void incrementProgress(float newProgress)

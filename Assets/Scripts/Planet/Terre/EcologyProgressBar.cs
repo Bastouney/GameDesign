@@ -19,7 +19,6 @@ public class EcologyProgressBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        decreaseProgress(0.75f);
     }
 
     // Update is called once per frame

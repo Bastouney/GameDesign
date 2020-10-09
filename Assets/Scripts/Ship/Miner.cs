@@ -7,9 +7,11 @@ public class Miner : MonoBehaviour
     public Vector2 endPos = new Vector2(-1, -1);
     [SerializeReference] private float moveSpeed = 0.5f;
     // Start is called before the first frame update
-    public float cost = 0.1f;
+    public float economyCost = 0.1f;
     public float economyGains = 0.2f;
+    public float resourceCost = 0.1f;
     private bool isReturn = false;
+    public ResourceProgressBar resource;
 
     public EconomyProgressBar economy;
 
@@ -45,7 +47,10 @@ public class Miner : MonoBehaviour
             endPos.y > transform.position.y - moveSpeed && endPos.y < transform.position.y + moveSpeed)
         {
             if (endPos.x != 0.5f && endPos.y != 0.5f)
+            {
+                decreaseResource();
                 endPos = new Vector2(0.5f, 0.5f);
+            }
             else
             {
                 GetComponent<Renderer>().enabled = false;
@@ -56,8 +61,23 @@ public class Miner : MonoBehaviour
             }
         }
     }
-    public void decreaseMoney()
+    public bool decreaseMoney()
     {
-        economy.decreaseProgress(cost);
+        if (economy.slider.value < economyCost)
+            return false;
+        economy.decreaseProgress(economyCost);
+        return true;
+    }
+
+    public void decreaseResource()
+    {
+        resource.decreaseResource(resourceCost);
+    }
+
+    public bool isEnoughResource()
+    {
+        if (resource.slider.value < resourceCost)
+            return false;
+        return true;
     }
 }
