@@ -19,7 +19,6 @@ public class ScienceProgressBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        incrementProgress(0.75f);
     }
 
     // Update is called once per frame

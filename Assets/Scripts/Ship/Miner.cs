@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spaceship : MonoBehaviour
+public class Miner : MonoBehaviour
 {
     public Vector2 endPos = new Vector2(-1, -1);
     [SerializeReference] private float moveSpeed = 0.5f;
     // Start is called before the first frame update
+    public float cost = 0.1f;
+    public float economyGains = 0.2f;
+    private bool isReturn = false;
+
+    public EconomyProgressBar economy;
+
     void Start()
     {
-        GetComponent<Renderer>().enabled = true;
+        GetComponent<Renderer>().enabled = false;
         //endPos.x = -1;
         //endPos.y = -1;
     }
@@ -44,8 +50,14 @@ public class Spaceship : MonoBehaviour
             {
                 GetComponent<Renderer>().enabled = false;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-                //GameObject.Destroy(this.gameObject);
+                if (!isReturn)
+                    economy.incrementProgress(economyGains);
+                isReturn = true;
             }
         }
+    }
+    public void decreaseMoney()
+    {
+        economy.decreaseProgress(cost);
     }
 }

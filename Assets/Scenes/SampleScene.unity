@@ -360,7 +360,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Exploration mini\xE8re"
+  m_Text: Envoyer une sonde spatiale
 --- !u!222 &83017264
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -379,8 +379,8 @@ GameObject:
   m_Component:
   - component: {fileID: 166641210}
   - component: {fileID: 166641213}
-  - component: {fileID: 166641212}
   - component: {fileID: 166641211}
+  - component: {fileID: 166641212}
   m_Layer: 0
   m_Name: miner
   m_TagString: Untagged
@@ -432,11 +432,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 166641209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b315f282a087d845b93ca76c5ac51e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3dab2daa523276f40838d133a24d3f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 0}
+  endPos: {x: -1, y: -1}
   moveSpeed: 0.5
+  cost: 0.1
+  economyGains: 0.2
+  economy: {fileID: 1869579546}
 --- !u!212 &166641213
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -616,7 +619,6 @@ GameObject:
   m_Component:
   - component: {fileID: 352276159}
   - component: {fileID: 352276158}
-  - component: {fileID: 352276161}
   - component: {fileID: 352276160}
   - component: {fileID: 352276162}
   m_Layer: 0
@@ -708,22 +710,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 15.000001
---- !u!114 &352276161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 352276157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24f1021b7edf5ad42b1b567a01605187, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spacesh: {fileID: 573666097}
-  miner: {fileID: 166641212}
-  colonie: {fileID: 1921901067}
-  clone: {fileID: 573666097}
 --- !u!114 &352276162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,6 +724,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Panel: {fileID: 1991350704}
   progressBar: {fileID: 1896578527}
+  sonde: {fileID: 573666097}
+  miner: {fileID: 166641212}
+  colonie: {fileID: 1921901067}
+  cloneSonde: {fileID: 0}
+  cloneMiner: {fileID: 0}
+  cloneColonie: {fileID: 0}
 --- !u!1 &354987126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,8 +1163,8 @@ GameObject:
   m_Component:
   - component: {fileID: 573666099}
   - component: {fileID: 573666098}
-  - component: {fileID: 573666097}
   - component: {fileID: 573666100}
+  - component: {fileID: 573666097}
   m_Layer: 0
   m_Name: sonde
   m_TagString: Untagged
@@ -1189,11 +1181,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 573666096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b315f282a087d845b93ca76c5ac51e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 64862ece41ae76b4481e2f1a0c295d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 0}
+  endPos: {x: -1, y: -1}
   moveSpeed: 0.5
+  cost: 0.1
+  scienceGains: 0.1
+  economy: {fileID: 1869579546}
+  science: {fileID: 1348811139}
 --- !u!212 &573666098
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1626,7 +1622,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 708838988}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 352276162}
+        m_TargetAssemblyTypeName: Pendars, Assembly-CSharp
+        m_MethodName: sendShipSonde
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &708838988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2430,7 +2438,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1102626104}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 352276162}
+        m_TargetAssemblyTypeName: Pendars, Assembly-CSharp
+        m_MethodName: sendShipColonie
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1102626104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3141,7 +3161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Envoyer une sonde spatiale
+  m_Text: "Exploration mini\xE8re"
 --- !u!222 &1720597533
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3231,7 +3251,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1823811903}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 352276162}
+        m_TargetAssemblyTypeName: Pendars, Assembly-CSharp
+        m_MethodName: sendShipMiner
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1823811903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3355,7 +3387,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.6
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3563,8 +3595,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1921901065}
   - component: {fileID: 1921901068}
-  - component: {fileID: 1921901067}
   - component: {fileID: 1921901066}
+  - component: {fileID: 1921901067}
   m_Layer: 0
   m_Name: colonie
   m_TagString: Untagged
@@ -3616,10 +3648,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1921901064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b315f282a087d845b93ca76c5ac51e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 07d653edbc8960d44b8b23487522f09a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 0, y: 0}
+  endPos: {x: -1, y: -1}
   moveSpeed: 0.5
 --- !u!212 &1921901068
 SpriteRenderer:
@@ -3689,7 +3721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1991350705
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3822,7 +3854,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
