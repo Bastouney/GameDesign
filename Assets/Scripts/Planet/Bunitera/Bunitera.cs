@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pendars : MonoBehaviour
+public class Bunitera : MonoBehaviour
 {
     public GameObject Panel;
     public ResourceProgressBar progressBar;
     public ScienceProgressBar science;
+    public Terre terre;
 
     public Sonde sonde;
     public Miner miner;
@@ -28,8 +29,10 @@ public class Pendars : MonoBehaviour
     {
         if (Panel != null && Panel.activeSelf == false)
         {
+            terre.setOpenWindow(Panel);
             Panel.SetActive(true);
-        } else
+        }
+        else
         {
             Panel.SetActive(false);
         }
@@ -39,11 +42,10 @@ public class Pendars : MonoBehaviour
     {
         cloneSonde = (Sonde)Instantiate(sonde, new Vector3(0.5f, 0.5f, 2), transform.rotation);
         if (cloneSonde.decreaseMoney())
-        { 
+        {
             cloneSonde.setEndPos(new Vector2(transform.position.x, transform.position.y));
             cloneSonde.endPos.x = transform.position.x;
             cloneSonde.endPos.y = transform.position.y;
-            cloneSonde.decreaseMoney();
         }
     }
 
@@ -73,11 +75,11 @@ public class Pendars : MonoBehaviour
     void Update()
     {
 
-        if (science.slider.value >= 0.3f && minerButton.activeSelf == false)
+        if (science.targetProgress >= 0.3f && minerButton.activeSelf == false)
         {
             minerButton.SetActive(true);
         }
-        if (science.slider.value >= 0.8f && coloniseButton.activeSelf == false)
+        if (science.targetProgress >= 0.8f && coloniseButton.activeSelf == false)
         {
             coloniseButton.SetActive(true);
         }

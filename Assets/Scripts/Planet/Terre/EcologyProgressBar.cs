@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EcologyProgressBar : MonoBehaviour
 {
     private Slider slider;
 
-    public float FillSpeed = 0.5f;
-    private float targetProgress = 1f;
+    public float FillSpeed = 0.05f;
+    public float targetProgress = 1f;
     public int frameNb = 0;
+
 
     private void Awake()
     {
@@ -30,10 +32,15 @@ public class EcologyProgressBar : MonoBehaviour
         {
             slider.value -= 0.01f;        
         }
+        Debug.Log(slider.value);
+        if (slider.value <= 0)
+        {
+            SceneManager.LoadScene("Lost");
+        }
     }
 
     public void decreaseProgress(float newProgress)
     {
-        targetProgress = slider.value - newProgress;
+        targetProgress -= newProgress;
     }
 }

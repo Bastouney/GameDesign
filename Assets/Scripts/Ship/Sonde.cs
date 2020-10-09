@@ -8,7 +8,7 @@ public class Sonde : MonoBehaviour
     public Vector2 endPos = new Vector2(-1, -1);
     [SerializeReference] private float moveSpeed = 0.5f;
     public float economyCost = 0.1f;
-    public float scienceGains = 0.05f;
+    public float scienceGains = 0.02f;
 
     public EconomyProgressBar economy;
     public ScienceProgressBar science;
@@ -62,7 +62,8 @@ public class Sonde : MonoBehaviour
 
     public bool decreaseMoney()
     {
-        if (economy.slider.value < economyCost)
+        Debug.Log(economy.targetProgress);
+        if (economy.targetProgress < economyCost)
             return false;
         economy.decreaseProgress(economyCost);
         return true;

@@ -9,7 +9,7 @@ public class Colonie : MonoBehaviour
     public float economyCost = 0.4f;
 
     public EconomyProgressBar economy;
-
+    public Terre terre;
 
 
     // Start is called before the first frame update
@@ -45,7 +45,10 @@ public class Colonie : MonoBehaviour
             endPos.y > transform.position.y - moveSpeed && endPos.y < transform.position.y + moveSpeed)
         {
             if (endPos.x != 0.5f && endPos.y != 0.5f)
+            {
+                terre.nb++;
                 endPos = new Vector2(0.5f, 0.5f);
+            }
             else
             {
                 GetComponent<Renderer>().enabled = false;
@@ -57,7 +60,7 @@ public class Colonie : MonoBehaviour
 
     public bool decreaseMoney()
     {
-        if (economy.slider.value < economyCost)
+        if (economy.targetProgress < economyCost)
             return false;
         economy.decreaseProgress(economyCost);
         return true;

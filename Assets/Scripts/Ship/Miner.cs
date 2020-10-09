@@ -63,7 +63,7 @@ public class Miner : MonoBehaviour
     }
     public bool decreaseMoney()
     {
-        if (economy.slider.value < economyCost)
+        if (economy.targetProgress < economyCost)
             return false;
         economy.decreaseProgress(economyCost);
         return true;
@@ -76,7 +76,7 @@ public class Miner : MonoBehaviour
 
     public bool isEnoughResource()
     {
-        if (resource.slider.value < resourceCost)
+        if (resource.targetProgress < resourceCost)
             return false;
         return true;
     }

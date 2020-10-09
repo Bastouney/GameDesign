@@ -9,7 +9,7 @@ public class EconomyProgressBar : MonoBehaviour
     public Slider slider;
 
     public float FillSpeed = 0.5f;
-    private float targetProgress = 0.5f;
+    public float targetProgress = 0.5f;
     public int frameNb = 0;
 
     private void Awake()
@@ -31,19 +31,18 @@ public class EconomyProgressBar : MonoBehaviour
             targetProgress += 0.01f;
         }
         if (slider.value < targetProgress)
-            slider.value += FillSpeed;
+            slider.value += FillSpeed * Time.deltaTime;
         if (slider.value > targetProgress)
-            slider.value -= FillSpeed;
+            slider.value -= FillSpeed * Time.deltaTime;
     }
 
     public void incrementProgress(float newProgress)
     {
-        targetProgress = slider.value + newProgress;
+        targetProgress += newProgress;
     }
 
     public void decreaseProgress(float newProgress)
     {
-        Debug.Log(newProgress);
-        targetProgress = slider.value - newProgress;
+        targetProgress -= newProgress;
     }
 }

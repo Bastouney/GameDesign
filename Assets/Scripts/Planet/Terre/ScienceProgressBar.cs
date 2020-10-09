@@ -8,8 +8,8 @@ public class ScienceProgressBar : MonoBehaviour
 {
     public Slider slider;
 
-    public float FillSpeed = 0.5f;
-    private float targetProgress = 0f;
+    public float FillSpeed = 0.1f;
+    public float targetProgress = 0f;
 
     private Camera cam;
 
@@ -34,7 +34,7 @@ public class ScienceProgressBar : MonoBehaviour
 
     public void incrementProgress(float newProgress)
     {
-        targetProgress = slider.value + newProgress;
+        targetProgress += newProgress;
         if (targetProgress >= 0.5f)
         {
             cam.orthographicSize = 7;

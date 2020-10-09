@@ -9,7 +9,7 @@ public class ResourceProgressBar : MonoBehaviour
     public Slider slider;
 
     public float FillSpeed = 0.5f;
-    private float targetProgress = 1f;
+    public float targetProgress = 1f;
 
     private void Awake()
     {
@@ -31,6 +31,6 @@ public class ResourceProgressBar : MonoBehaviour
 
     public void decreaseResource(float newProgress)
     {
-        targetProgress = slider.value - newProgress;
+        targetProgress -= newProgress;
     }
 }
