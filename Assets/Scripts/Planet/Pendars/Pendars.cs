@@ -6,6 +6,7 @@ public class Pendars : MonoBehaviour
 {
     public GameObject Panel;
     public ResourceProgressBar progressBar;
+    public ScienceProgressBar science;
 
     public Sonde sonde;
     public Miner miner;
@@ -14,9 +15,13 @@ public class Pendars : MonoBehaviour
     public Miner cloneMiner;
     public Colonie cloneColonie;
     public bool isColonise = false;
+    public GameObject minerButton;
+    public GameObject coloniseButton;
 
     void Start()
     {
+        minerButton.SetActive(false);
+        coloniseButton.SetActive(false);
     }
 
     private void OnMouseDown()
@@ -65,5 +70,16 @@ public class Pendars : MonoBehaviour
         }
     }
 
+    void Update()
+    {
 
+        if (science.slider.value >= 0.3f && minerButton.activeSelf == false)
+        {
+            minerButton.SetActive(true);
+        }
+        if (science.slider.value >= 0.8f && coloniseButton.activeSelf == false)
+        {
+            coloniseButton.SetActive(true);
+        }
+    }
 }

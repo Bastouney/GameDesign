@@ -8,7 +8,7 @@ public class Sonde : MonoBehaviour
     public Vector2 endPos = new Vector2(-1, -1);
     [SerializeReference] private float moveSpeed = 0.5f;
     public float economyCost = 0.1f;
-    public float scienceGains = 0.1f;
+    public float scienceGains = 0.05f;
 
     public EconomyProgressBar economy;
     public ScienceProgressBar science;

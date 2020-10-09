@@ -9,7 +9,8 @@ public class EcologyProgressBar : MonoBehaviour
     private Slider slider;
 
     public float FillSpeed = 0.5f;
-    private float targetProgress = 1;
+    private float targetProgress = 1f;
+    public int frameNb = 0;
 
     private void Awake()
     {
@@ -24,8 +25,11 @@ public class EcologyProgressBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (slider.value > targetProgress)
-            slider.value -= FillSpeed * Time.deltaTime;
+        frameNb++;
+        if (frameNb % 1000 == 0)
+        {
+            slider.value -= 0.01f;        
+        }
     }
 
     public void decreaseProgress(float newProgress)

@@ -768,6 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Panel: {fileID: 1991350704}
   progressBar: {fileID: 1896578527}
+  science: {fileID: 475232056}
   sonde: {fileID: 573666097}
   miner: {fileID: 166641212}
   colonie: {fileID: 1921901067}
@@ -775,6 +776,8 @@ MonoBehaviour:
   cloneMiner: {fileID: 0}
   cloneColonie: {fileID: 0}
   isColonise: 0
+  minerButton: {fileID: 1823811900}
+  coloniseButton: {fileID: 1102626101}
 --- !u!1 &354987126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471906645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.098852, y: 2.91716, z: 3.2776866}
+  m_LocalPosition: {x: -15.2, y: 4.33, z: 3.2776866}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 268597012}
@@ -1271,6 +1274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a07b8c554ccfc74ab81c3ed6ca20ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 0}
   FillSpeed: 0.5
 --- !u!114 &475232058
 MonoBehaviour:
@@ -2354,7 +2358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841981644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0188522, y: 7.24716, z: 3.2776866}
+  m_LocalPosition: {x: -2.99, y: 6.66, z: 3.2776866}
   m_LocalScale: {x: 0.04, y: 0.04, z: 1}
   m_Children: []
   m_Father: {fileID: 268597012}
@@ -2502,8 +2506,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905907879}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.59814775, y: 0.44216004, z: 11.277687}
-  m_LocalScale: {x: 0.7627451, y: 0.64394253, z: 1}
+  m_LocalPosition: {x: 0.653, y: 0.434, z: 11.277687}
+  m_LocalScale: {x: 0.8703618, y: 0.6371522, z: 1}
   m_Children: []
   m_Father: {fileID: 268597012}
   m_RootOrder: 1
@@ -3130,7 +3134,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.35686275, g: 0.32941177, b: 0.32941177, a: 1}
     m_PressedColor: {r: 0.35686275, g: 0.32941177, b: 0.32941177, a: 1}
     m_SelectedColor: {r: 0.35686275, g: 0.32941177, b: 0.32941177, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.5294118, g: 0.03529412, b: 0, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3275,7 +3279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110261505}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.121148, y: 0.46716002, z: 3.2776866}
+  m_LocalPosition: {x: 14.22, y: -0.51, z: 3.2776866}
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 268597012}
@@ -3562,6 +3566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FillSpeed: 0.5
+  frameNb: 0
 --- !u!114 &1258941398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3824,7 +3829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404080528}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.211148, y: 7.81716, z: 3.2776866}
+  m_LocalPosition: {x: 16.77, y: -6.31, z: 3.2776866}
   m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_Children: []
   m_Father: {fileID: 268597012}
@@ -3882,7 +3887,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 0}
-  FillSpeed: 0.1
+  FillSpeed: 0.5
+  frameNb: 0
 --- !u!114 &1412257064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4528,7 +4534,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.35686275, g: 0.32941177, b: 0.32941177, a: 1}
     m_PressedColor: {r: 0.35686275, g: 0.32941177, b: 0.32941177, a: 1}
     m_SelectedColor: {r: 0.35686275, g: 0.32941177, b: 0.32941177, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.5283019, g: 0.035814967, b: 0, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -4992,7 +4998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1991350705
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5329,7 +5335,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

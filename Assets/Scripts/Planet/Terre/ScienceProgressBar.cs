@@ -6,10 +6,12 @@ using UnityEngine.UI;
 
 public class ScienceProgressBar : MonoBehaviour
 {
-    private Slider slider;
+    public Slider slider;
 
     public float FillSpeed = 0.5f;
-    private float targetProgress = 0;
+    private float targetProgress = 0f;
+
+    private Camera cam;
 
     private void Awake()
     {
@@ -19,6 +21,8 @@ public class ScienceProgressBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
+        cam.orthographicSize = 5;
     }
 
     // Update is called once per frame
@@ -31,5 +35,13 @@ public class ScienceProgressBar : MonoBehaviour
     public void incrementProgress(float newProgress)
     {
         targetProgress = slider.value + newProgress;
+        if (targetProgress >= 0.5f)
+        {
+            cam.orthographicSize = 7;
+        }
+        if (targetProgress >= 1f)
+        {
+            cam.orthographicSize = 9;
+        }
     }
 }
