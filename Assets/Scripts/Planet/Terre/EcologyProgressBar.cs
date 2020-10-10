@@ -28,14 +28,14 @@ public class EcologyProgressBar : MonoBehaviour
     void Update()
     {
         frameNb++;
-        if (frameNb % 1000 == 0)
+        if (frameNb % 600 == 0)
         {
             slider.value -= 0.01f;        
         }
         Debug.Log(slider.value);
         if (slider.value <= 0)
         {
-            SceneManager.LoadScene("Lost");
+            SceneManager.LoadScene("BadEnd");
         }
     }
 

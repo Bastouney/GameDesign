@@ -5,11 +5,11 @@ using UnityEngine;
 public class Miner : MonoBehaviour
 {
     public Vector2 endPos = new Vector2(-1, -1);
-    [SerializeReference] private float moveSpeed = 0.5f;
+    [SerializeReference] private float moveSpeed = 0.7f;
     // Start is called before the first frame update
     public float economyCost = 0.1f;
     public float economyGains = 0.2f;
-    public float resourceCost = 0.1f;
+    public float resourceCost = 0.3f;
     private bool isReturn = false;
     public ResourceProgressBar resource;
 

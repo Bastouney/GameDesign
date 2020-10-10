@@ -18,9 +18,9 @@ public class Terre : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (nb == 2)
+        if (nb == 7)
         {
-            SceneManager.LoadScene("Victory");
+            SceneManager.LoadScene("GoodEnd");
         }
     }
 

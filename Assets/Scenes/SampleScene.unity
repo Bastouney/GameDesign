@@ -756,10 +756,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: -1, y: -1}
-  moveSpeed: 0.5
+  moveSpeed: 0.7
   economyCost: 0.1
   economyGains: 0.2
-  resourceCost: 0.1
+  resourceCost: 0.3
   resource: {fileID: 0}
   economy: {fileID: 1412257062}
 --- !u!212 &166641213
@@ -3720,7 +3720,7 @@ MonoBehaviour:
   endPos: {x: -1, y: -1}
   moveSpeed: 0.5
   economyCost: 0.1
-  scienceGains: 0.1
+  scienceGains: 0.08
   economy: {fileID: 1412257062}
   science: {fileID: 475232056}
 --- !u!212 &573666098
@@ -12114,7 +12114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: -1, y: -1}
-  moveSpeed: 0.5
+  moveSpeed: 0.7
   economyCost: 0.1
   economy: {fileID: 1412257062}
   terre: {fileID: 82705933}

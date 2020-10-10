@@ -5,7 +5,7 @@ using UnityEngine;
 public class Colonie : MonoBehaviour
 {
     public Vector2 endPos = new Vector2(-1, -1);
-    [SerializeReference] private float moveSpeed = 0.5f;
+    [SerializeReference] private float moveSpeed = 0.7f;
     public float economyCost = 0.4f;
 
     public EconomyProgressBar economy;

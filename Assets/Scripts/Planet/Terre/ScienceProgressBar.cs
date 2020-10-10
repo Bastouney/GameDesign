@@ -8,7 +8,7 @@ public class ScienceProgressBar : MonoBehaviour
 {
     public Slider slider;
 
-    public float FillSpeed = 0.1f;
+    public float FillSpeed = 0.5f;
     public float targetProgress = 0f;
 
     private Camera cam;
