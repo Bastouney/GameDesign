@@ -1774,6 +1774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 1991350704}
+  barColor: {fileID: 2098450313}
   progressBar: {fileID: 1896578527}
   science: {fileID: 475232056}
   terre: {fileID: 82705933}
@@ -2872,6 +2873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 2053204411}
+  barColor: {fileID: 1782486732}
   progressBar: {fileID: 1455379126}
   science: {fileID: 475232056}
   terre: {fileID: 82705933}
@@ -5031,6 +5033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 1546120891}
+  barColor: {fileID: 959184233}
   progressBar: {fileID: 181820295}
   science: {fileID: 475232056}
   terre: {fileID: 82705933}
@@ -5550,6 +5553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 196704745}
+  barColor: {fileID: 1720756663}
   progressBar: {fileID: 2101383136}
   science: {fileID: 475232056}
   terre: {fileID: 82705933}
@@ -6523,6 +6527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 1071758410}
+  barColor: {fileID: 1247863555}
   progressBar: {fileID: 1585683754}
   science: {fileID: 475232056}
   terre: {fileID: 82705933}
@@ -7385,6 +7390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 1783622703}
+  barColor: {fileID: 249725323}
   progressBar: {fileID: 121826531}
   science: {fileID: 475232056}
   terre: {fileID: 82705933}
@@ -8731,6 +8737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 831650878}
+  barColor: {fileID: 1837414845}
   progressBar: {fileID: 288980990}
   science: {fileID: 475232056}
   terre: {fileID: 82705933}

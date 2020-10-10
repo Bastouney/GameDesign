@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Planete : MonoBehaviour
 {
     public GameObject Panel;
+    public Image barColor;
     public ResourceProgressBar progressBar;
     public ScienceProgressBar science;
     public Terre terre;
@@ -68,6 +70,7 @@ public class Planete : MonoBehaviour
             cloneColonie.endPos.x = transform.position.x;
             cloneColonie.endPos.y = transform.position.y;
             isColonise = true;
+			barColor.color = Color.green;
         }
     }
 
